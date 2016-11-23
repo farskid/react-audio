@@ -1,0 +1,24 @@
+{
+  "name": "react-audio-component",
+  "version": "1.0.0",
+  "description": "Audio component for react",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://farskid@github.com/farskid/react-audio.git"
+  },
+  "keywords": [
+    "audio",
+    "react",
+    "react-audio"
+  ],
+  "author": "Farzad YZ",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/farskid/react-audio/issues"
+  },
+  "homepage": "https://github.com/farskid/react-audio#readme"
+}
