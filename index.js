@@ -1,27 +1,24 @@
-import React, {Component, PropTypes, defaultProps} from 'react'
+import React, { Component, PropTypes, defaultProps } from 'react'
+import { generateUniqueId, logger } from './utils'
 
 export default class Audio extends Component {
 
   constructor(props) {
     super(props)
-    this.rand = Math.floor(9999 * Math.random() + 1)
+    
+    this.uniqueId = generateUniqueId()
     this.audio = null
-    this.logger = (msg) => {
-      if (this.props.logger) {
-        console.info(`React-Audio: ${msg}`)
-      }
-    }
   }
 
   componentDidMount() {
 
     /* Get ref */
-    this.audio = this.refs[`audio-${this.rand}`]
+    this.audio = this.refs[`audio-${this.uniqueId}`]
 
     /* Looping Logic */
     this.audio.addEventListener('ended', () => {
       if (!this.props.pause && this.props.loop) {
-        this.logger('Audio Looped, Playing...')
+        logger('Audio Looped, Playing...')
         this.audio.currentTime = 0
         this.audio.play()
       }
@@ -36,10 +33,10 @@ export default class Audio extends Component {
   /*  */
   componentWillUpdate(nextProps) {
     if (nextProps.pause) {
-      this.logger('Pausing Audio...')
+      logger('Pausing Audio...')
       this.audio.pause()
     } else {
-      this.logger('Playing Audio...')
+      logger('Playing Audio...')
       this.audio.play()
     }
   }
@@ -57,7 +54,6 @@ Audio.PropTypes = {
 }
 
 Audio.defaultProps = {
-  logger: true,
   loop: false
 }
 
