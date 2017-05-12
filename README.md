@@ -1,5 +1,5 @@
 # react-audio
-Declerative Audio component for react redux structure
+Declerative Audio component for React
 
 ### Installation
 simply run `npm install react-audio --save` or clone the repository `git clone https://github.com/farskid/react-audio.git`.
@@ -14,7 +14,7 @@ import `Audio` into your component and use it.
   export default class MyComponent extends Component {
     render() {
       return (
-        <Audio source="example/audio/path" />
+        <Audio source="example/audio/path" loop={true} />
       )
     }
   }
@@ -23,6 +23,5 @@ import `Audio` into your component and use it.
 ### Usefull props
 The only required prop is `source`. There are also other helper props:
 
-* logger ==> Boolean ==> indicates whether audio element should log changes in props and status
 * loop ==> Boolean ==> indicates whether the audio should be played infinite loop or not (It will pause during pause condition)
 * pause ==> statement which when gets __true__ the audio will pause and will resume or play when it changes to __false__.
